@@ -1,7 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppHeader from './components/AppHeader.vue';
+</script>
 
 <template>
-  <div />
+  <AppHeader />
 </template>
-
-<style scoped></style>

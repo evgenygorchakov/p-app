@@ -7,6 +7,8 @@
   "workspaces": ["web/app", "web/template"],
   "scripts": {
     "template:dev": "npm run start -w web/template",
-    "app:dev": "npm run dev -w web/app"
+    "template:build": "npm run build -w web/template",
+    "app:dev": "npm run dev -w web/app",
+    "app:build": "npm run build -w web/app"
   }
 }
