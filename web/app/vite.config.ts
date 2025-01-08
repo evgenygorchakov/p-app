@@ -5,8 +5,4 @@ import vike from 'vike/plugin'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vike()],
-  build: {
-    outDir: '../../dist',
-    emptyOutDir: true,
-  }
 })
