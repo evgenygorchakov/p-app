@@ -1,4 +1,4 @@
-import { createApp as createVueApp, h, type Component } from 'vue'
+import { createSSRApp, h, type Component } from 'vue'
 import { type PageContext } from 'vike/types'
 import PageLayout from './PageLayout.vue'
 
@@ -11,6 +11,6 @@ export function createApp(pageContext: PageContext) {
   }
  }
 
- const app = createVueApp(pageWithLayout)
+ const app = createSSRApp(pageWithLayout)
  return app
 }

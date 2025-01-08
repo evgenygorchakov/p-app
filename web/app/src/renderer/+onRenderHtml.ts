@@ -1,6 +1,12 @@
-import { escapeInject } from 'vike/server'
+import { escapeInject, dangerouslySkipEscape } from 'vike/server'
+import { type PageContext } from 'vike/types'
+import { renderToString } from '@vue/server-renderer'
+import { createApp } from './app'
 
-export async function onRenderHtml() {
+export async function onRenderHtml(pageContext: PageContext) {
+  const app = createApp(pageContext)
+  const appHtml = await renderToString(app)
+
   return escapeInject`
   <!doctype html>
   <html lang="en">
@@ -10,7 +16,7 @@ export async function onRenderHtml() {
       <title>p-app</title>
     </head>
     <body>
-      <div id="app"></div>
+      <div id="app">${dangerouslySkipEscape(appHtml)}</div>
     </body>
   </html>
   `
