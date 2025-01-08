@@ -8,7 +8,8 @@
   "scripts": {
     "template:dev": "npm run start -w web/template",
     "template:build": "npm run build -w web/template",
-    "app:dev": "npm run dev -w web/app",
-    "app:prod": "npm run prod -w web/app"
+    "dev": "npm run dev -w web/app",
+    "build": "npm run build -w web/app",
+    "preview": "npm run preview -w web/app"
   }
 }
